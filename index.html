@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Banner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    
+    
+    <style>
+        body {
+            background-color: rgb(247, 242, 247);
+        }
+
+        #header {
+            position: fixed;
+            width: 70%;
+            background-color: rgb(245, 189, 193);
+            top: 0;
+            color: white;
+            padding: 0px 15px;
+            z-index: 1;
+
+        }
+
+        #list li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 12px;
+            margin: 5px;
+            color: white;
+        }
+
+        #list li:hover {
+            background-color: black;
+            color: rgb(245 215 217);
+        }
+
+        #current_product {
+            margin-top: 85px;
+        }
+
+        #current_product,
+        #parent {
+            display: inline-block;
+
+        }
+
+        #left {
+            float: left;
+            width: 40%;
+            display: block;
+        }
+
+        #images2 {
+            display: block;
+        }
+
+        #right {
+            float: right;
+            width: 40%;
+            align-items: center;
+            padding-top: 55px;
+            padding-left: 15px;
+        }
+
+        .input_Add_to_cart {
+            height: 30px;
+            width: 150px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgb(199 96 103);
+            box-shadow: 1px 13px 20px 0px #d99398;
+
+        }
+
+        .input_0 {
+            height: 30px;
+            width: 150px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        .img {
+            margin-right: 6px;
+            margin-left: 6px;
+            padding: 3px;
+            display: table-cell;
+            border: 2px solid rgb(168, 216, 224);
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .other-images {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: contain;
+        }
+
+        .img:hover {
+            border: 3px solid grey;
+            opacity: 0.5;
+        }
+
+        h1 {
+            text-transform: capitalize;
+        }
+
+        .item-description {
+            line-height: 16pt;
+            font-size: 14px;
+        }
+
+        .head-element1 {
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 900;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .head-element2 {
+            display: inline-block;
+        }
+
+        .head-element3 {
+            display: inline-block;
+            text-align: end;
+
+        }
+
+        .price {
+            font-size: 25px;
+            display: inline-block;
+        }
+
+        .first {
+            display: inline-block;
+        }
+
+        h3 {
+            color: rgb(199 96 103);
+        }
+
+        #images1 {
+            margin: 40px;
+            border: 5px solid white;
+            border-radius: 15px;
+        }
+
+        #main {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .cart {
+            margin-right: 15px;
+        }
+
+        .account {
+            margin-left: 5px;
+        }
+
+        #other_products {
+            display: flex;
+            width: 100%;
+
+        }
+
+        #other_products .product {
+            width: 24%;
+            margin: 10px;
+            display: flexbox;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #other_products .product .card-image img {
+            width: 100%;
+            aspect-ratio: 2 / 2;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        #other_products .product .card-item-price {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        #other_products .product .card-footer .card-buy-now {
+            height: 30px;
+            width: 100px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgb(199 96 103);
+            color: white;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #other_products .product .card-item-description {
+            height: 120px;
+        }
+    </style>
+    <!-- <style>
+        body {
+            background-color: rgb(207, 225, 238);
+
+        }
+        #login {
+            background-color: blue;
+            height: 450px;
+            width: 350px;
+            float: right;
+            background-image: url(./images/banner.png);
+            background-size: cover;
+            
+            padding: 30px;
+
+        }
+
+        #enroll {
+            align-items: center;
+            float: left;
+        }
+
+        .input_login {
+            width: 80px;
+            height: 30px;
+            margin: 20px;
+        }
+
+        .input_signup {
+            width: 80px;
+            height: 30px;
+        }
+
+        .input_enroll {
+            background-color: orange;
+            color: white;
+            font-size: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 30px;
+            width: 100px;
+            border: 2px;
+            border-radius: 5px;
+        }
+
+        .input_demo {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+            border: 0px;
+            background-color: rgb(207, 225, 238);
+        }
+        .header
+        {
+            font-size: 30px;
+            font-weight: 900;
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+
+        .third  {
+            font-family: 'Times New Roman', Times, serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+        }
+        .second 
+        {
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+        
+    </style> -->
+</head>
+
+<body>
+    <main id="main">
+        <div id="header">
+            <header>
+                <div class="head-element1" style="width: 25%;">
+                    Casual Shoes
+                </div>
+                <div class="head-element2" style="width:55%">
+                    <ul id="list">
+                        <a href="">
+                            <li>Collections</li>
+                        </a>
+                        <a href="">
+                            <li>Men</li>
+                        </a>
+                        <a href="">
+                            <li>Women</li>
+                        </a>
+                        <a href="">
+                            <li>About</li>
+                        </a>
+                        <a href="">
+                            <li>Contact</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="head-element3" style="width:19%">
+                    <a class="cart" href=""> <i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="account" href=""><i class="fa-solid fa-user"></i></a>
+                </div>
+
+            </header>
+        </div>
+        <div id="current_product">
+            <div id="parent" style="width: 100%;">
+                <div id="left">
+                    <div id="images1" width="100%">
+                        <img style="width: 100%;" src="./images/shoes1.jpg" alt="image">
+                    </div>
+                    <div id="images2">
+                        <div class="img">
+                            <img class="other-images" src="./images/shoes2.jpg" alt="image">
+                        </div>
+                        <div class="img">
+                            <img class="other-images" src="./images/shoes3.jpg" alt="image">
+                        </div>
+                        <div class="img">
+                            <img class="other-images" src="./images/shoes4.jpg" alt="image">
+                        </div>
+                        <div class="img">
+                            <video class="other-images" controls>
+                                <source src="./images/shoes video.mp4" type="">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <h3>shoes company</h3>
+                    <h1>Fall limited edition <br> shoes</h1>
+                    <p class="item-description"> These low-profile shoes are your perfect casual wear
+                        companion.Featuring a durable rubber outer
+                        sole,they'll withstand everything the weather can offer.
+                    </p>
+                    <div>
+                        <p class="price">$125.00</p>
+                        <input class="first" type="button" value="50%" disabled>
+                        <br>
+                        <input class="second" type="button" value="$250.00" disabled>
+                        <br><br>
+                        <input class="input_0" type="button" value="-             0            +">
+                        <input class="input_Add_to_cart" type="button" value="Add to cart">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="other_products">
+            <div class="product">
+                <div class="card-image">
+                    <a href=""><img src="./images/shoes other products1.jpg" alt="image"></a>
+                </div>
+                <div class="card-item-description">
+                    <h2>SOLETHREADS <span class="card-item-price">($150)</span></h2>
+                    <p>Fantasy Sneakers for Women</p>
+                </div>
+                <div class="card-footer">
+                    <input class="card-buy-now" type="button" value="Buy Now">
+                </div>
+            </div>
+            <div class="product">
+                <div class="card-image">
+                    <a href=""><img src="./images/shoes other products3.jpg" alt="image"></a>
+                </div>
+                <div class="card-item-description">
+                    <h2>Campus <span class="card-item-price">($160)</span></h2>
+                    <p> Women's Alexa Running Shoes</p>
+                </div>
+                <div class="card-footer">
+                    <input class="card-buy-now" type="button" value="Buy Now">
+                </div>
+            </div>
+            <div class="product">
+                <div class="card-image">
+                    <a href=""><img src="./images/shoes other products2.jpg" alt="image"></a>
+                </div>
+                <div class="card-item-description">
+                    <h2>Campus <span class="card-item-price">($180)</span></h2>
+                    <p> Women's Hellen Walking Shoes</p>
+                </div>
+                <div class="card-footer">
+                    <input class="card-buy-now" type="button" value="Buy Now">
+                </div>
+            </div>
+            <div class="product">
+                <div class="card-image">
+                    <a href=""><img src="./images/shoes other products2.jpg" alt="image"></a>
+                </div>
+                <div class="card-item-description">
+                    <h2>Campus <span class="card-item-price">($180)</span></h2>
+                    <p> Women's Hellen Walking Shoes</p>
+
+                </div>
+                <div class="card-footer">
+                    <input class="card-buy-now" type="button" value="Buy Now">
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+    <!-- <div id="parent_div" width="100%">
+        <div id="enroll" width="70%">
+            <header class="header">
+                Real Heros
+            </header>
+            <div>
+                <p class="first">
+                    40% off for new lodin
+                </p>
+                <p class="second">
+                    Online Education in now Easy
+                </p>
+                <p class="third">
+                    purus tellus leetus fermentum velliquet velliquet id morbi sit arcu gravida augue amelit sed sapien.
+                </p>
+                <div>
+                    <input class="input_enroll" type="button" value="ENROLL NOW">
+                    <input class="input_demo" type="button" value="Watch Demo">
+                </div>
+            </div>
+
+
+        </div>
+        <div id="login" width="30%">
+            <input class="input_login" type="button" value="Log In">
+            <input class="input_signup" type="button" value="Sign Up">
+
+
+        </div>
+
+    </div> -->
+</body>
+
+</html>
